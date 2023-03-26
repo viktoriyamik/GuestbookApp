@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- App's main title -->
+<title>Danish bread bakery</title>
+<!-- Declarations -->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="/css/app.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+<!-- Nav-bar -->
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand">Danish bread bakery</a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li><a href="/">Home</a></li>
+        <li><a href="/newmessage">New Message</a></li>
+        <li><a href="/ajaxmessage">Ajax Message</a></li>
+        <li class="active"><a href="/guestbook">Guestbook</a></li>
+      </ul>
+    </div>
+  </nav> 
+
+<!-- Page main title -->
+    <div class="container">
+        <h1>Guestbook</h1>
+        <p>thank you for visiting us</p>
+<!-- Guestbook table -->
+        <div id="guestbook-entries">
+		<table class="table table-hover">
+		  <tr>
+          <th>Username</th>
+          <th>Country</th>
+          <th>Message</th>
+          </tr>
+            <% for(let entry of entries) { %>
+
+                 <tr>
+                    <td>                   
+                        <%= entry.username %>
+                    </td>
+                    <td>
+                        <%= entry.country %>
+                    </td>
+                    <td>
+                        <%= entry.message %>
+                    </td></tr>
+
+                <% } %>
+			</table>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
