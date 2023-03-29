@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Main title -->
+<title>Danish bread bakery</title>
+<!-- Declarations -->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="/css/app.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css" integrity="sha384-X38yfunGUhNzHpBaEBsWLO+A0HDYOQi8ufWDkZ0k9e0eXz/tH3II7uKZ9msv++Ls" crossorigin="anonymous">
+</head>
+
+<body>
+<!-- Nav-bar -->
+  <div class="pure-menu pure-menu-horizontal">
+    <a class="pure-menu-heading pure-menu-link">Danish bread bakery</a>
+      <ul class="pure-menu-list">
+        <li class="pure-menu-item">
+          <a href="/" class="pure-menu-link">Home</a>
+        </li>
+        <li class="pure-menu-item">
+          <a href="/newmessage" class="pure-menu-link">New Message</a>
+      </li>
+        <li class="pure-menu-item">
+          <a href="/ajaxmessage" class="pure-menu-link">Ajax Message</a>
+      </li>
+      <li class="pure-menu-item">
+        <a href="/guestbook" class="pure-menu-link">Guestbook</a>
+    </li>
+    </ul>
+</div>
+
+<!-- Page main title -->
+    <div class="container-fluid" style="margin-left: 50px;">
+        <h1 style="margin-top: 50px;">Guestbook</h1>
+        <p style="margin-bottom: 50px;">thank you for visiting us</p>
+<!-- Guestbook table -->
+        <div id="guestbook-entries">
+		<table class="table table-hover">
+		  <tr>
+          <th>Username</th>
+          <th>Country</th>
+          <th>Message</th>
+          </tr>
+            <% for(let entry of entries) { %>
+
+                 <tr>
+                    <td>                   
+                        <%= entry.username %>
+                    </td>
+                    <td>
+                        <%= entry.country %>
+                    </td>
+                    <td>
+                        <%= entry.message %>
+                    </td></tr>
+
+                <% } %>
+			</table>
+        </div>
+
+    </div>
+
+<!-- Footer -->
+<div class="footer l-box is-center" style="margin-top: 50px;">
+  <p>Danish bread bakery</p>
+</div>
+
+</body>
+
+</html>
